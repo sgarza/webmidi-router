@@ -1,0 +1,30 @@
+{
+  "name": "webmidi-router",
+  "version": "0.0.1",
+  "description": "Javascript library boilerplate",
+  "main": "dist/index.umd.bundle.js",
+  "module": "dist/index.esm.bundle.js",
+  "moduleName": "WebMidiRouter",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "npm run build && opn http://127.0.0.1:5050/tests/ && serve -p 5050"
+  },
+  "author": "Sergio de la Garza",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.3",
+    "opn-cli": "^4.1.0",
+    "reify": "^0.18.1",
+    "rollup": "^1.10.0",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "serve": "^11.0.0",
+    "sinon": "^7.3.2",
+    "source-map-support": "^0.5.12"
+  },
+  "dependencies": {
+    "webmidi": "^2.3.3"
+  }
+}
