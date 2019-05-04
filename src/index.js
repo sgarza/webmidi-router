@@ -4,9 +4,9 @@ import get from "lodash/get";
 import isFunction from "lodash/isFunction";
 class WebMidiRouter {
   constructor(routes) {
-    this.inputs = webmidi.inputs;
-    this.outputs = webmidi.outputs;
     this.backend = webmidi;
+    this.inputs = this.backend.inputs;
+    this.outputs = this.backend.outputs;
 
     this._routes = routes || {};
     this._handlers = {};
@@ -16,9 +16,15 @@ class WebMidiRouter {
     return new Promise((res, rej) => {
       this.backend.enable(err => {
         if (err) rej(err);
+        this.inputs = this.backend.inputs;
+        this.outputs = this.backend.outputs;
         res(true);
       });
     });
+  }
+
+  disable() {
+    this.backend.disable();
   }
 
   getHandlerByName(name) {
