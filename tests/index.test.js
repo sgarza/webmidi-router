@@ -28,7 +28,7 @@ describe("WebMidiRouter", () => {
     });
   });
 
-  describe('ControChange', () => {
+  describe('ControlChange', () => {
     describe("When the handler is on the CC# value", () => {
       const router = new WebMidiRouter();
 
