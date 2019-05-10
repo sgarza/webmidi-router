@@ -40,7 +40,6 @@ class WebMidiRouter {
 
     if (isFunction(handler)) {
       this.addHandler(handler);
-    } else {
     }
 
     if (value) {
